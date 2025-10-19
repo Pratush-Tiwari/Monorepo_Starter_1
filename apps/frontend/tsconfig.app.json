@@ -1,0 +1,14 @@
+{
+  "extends": "../../packages/config/tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "types": ["vite/client"],
+    "paths": {
+      "@/*": ["../../packages/ui/src/*"],
+      "@template/ui": ["../../packages/ui/src"],
+      "@template/shared-types": ["../../packages/shared-types/src"]
+    }
+  },
+  "include": ["src"]
+}
