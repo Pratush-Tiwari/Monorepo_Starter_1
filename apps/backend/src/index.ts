@@ -1,13 +1,8 @@
-import express from "express";
-import { env } from "./env.mjs";
+import { app } from "./app.js";
+import { env } from "./config/env.js";
 
-const app = express();
-const port = 3000;
-
-app.get("/api/health", (_req, res) => {
-  res.json({ status: "ok", nodeEnv: env.NODE_ENV });
-});
+const port = env.PORT;
 
 app.listen(port, () => {
-  console.log(`Backend listening on http://localhost:${port}`);
+  console.log(`Backend listening on http://localhost:${port} (env: ${env.NODE_ENV})`);
 });
