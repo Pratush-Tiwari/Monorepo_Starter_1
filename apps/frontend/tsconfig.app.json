@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "moduleResolution": "Bundler",
     "types": ["vite/client"],
+    "noEmit": true,
     "paths": {
       "@/*": ["../../packages/ui/src/*"],
       "@template/ui": ["../../packages/ui/src"],
