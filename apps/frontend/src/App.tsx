@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLazyGetHealthQuery } from './redux/api/healthApi';
 
 function App() {
-  const [preferCache, setPreferCache] = useState(true);
+  const [preferCache, setPreferCache] = useState<boolean>(true);
   const [trigger, { data, isFetching, isError }] = useLazyGetHealthQuery();
 
   const handleClick = async () => {

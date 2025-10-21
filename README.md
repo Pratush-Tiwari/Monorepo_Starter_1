@@ -35,6 +35,7 @@ template/
 ## 🚀 Tech Stack
 
 ### Frontend
+
 - **React 19** - UI library with latest features
 - **TypeScript** - Type safety and developer experience
 - **Vite** - Fast build tool and dev server
@@ -43,6 +44,7 @@ template/
 - **shadcn/ui** - Modern component library
 
 ### Backend
+
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
 - **TypeScript** - Type safety
@@ -52,6 +54,7 @@ template/
 - **T3 Env** - Environment variable validation
 
 ### Development Tools
+
 - **Turborepo** - Monorepo build system
 - **PNPM** - Fast package manager
 - **ESLint** - Code linting
@@ -67,6 +70,7 @@ template/
 ## 🚀 Quick Start
 
 ### 1. Clone and Install
+
 ```bash
 git clone <repository-url>
 cd template
@@ -74,9 +78,11 @@ pnpm install
 ```
 
 ### 2. Environment Setup
+
 Create environment files:
 
 **Backend** (`apps/backend/.env`):
+
 ```env
 # Server Configuration
 PORT=4000
@@ -95,6 +101,7 @@ JWT_SECRET=your-super-secret-jwt-key-min-16-chars
 ```
 
 ### 3. Database Setup
+
 ```bash
 # Generate Prisma client
 cd packages/db
@@ -105,6 +112,7 @@ pnpm prisma db push
 ```
 
 ### 4. Start Development
+
 ```bash
 # Start both frontend and backend
 pnpm dev
@@ -118,44 +126,45 @@ pnpm dev:backend   # Backend only (http://localhost:4000)
 
 ### 🔧 Development Commands
 
-| Command | Description | Ports |
-|---------|-------------|-------|
-| `pnpm dev` | Start both frontend and backend | Frontend: 5173, Backend: 4000 |
-| `pnpm dev:frontend` | Start frontend only | 5173 |
-| `pnpm dev:backend` | Start backend only | 4000 |
+| Command             | Description                     | Ports                         |
+| ------------------- | ------------------------------- | ----------------------------- |
+| `pnpm dev`          | Start both frontend and backend | Frontend: 5173, Backend: 4000 |
+| `pnpm dev:frontend` | Start frontend only             | 5173                          |
+| `pnpm dev:backend`  | Start backend only              | 4000                          |
 
 ### 🏗️ Build Commands
 
-| Command | Description |
-|---------|-------------|
+| Command      | Description                         |
+| ------------ | ----------------------------------- |
 | `pnpm build` | Build all packages and applications |
 
 ### 🚀 Production Commands
 
-| Command | Description |
-|---------|-------------|
+| Command      | Description                                     |
+| ------------ | ----------------------------------------------- |
 | `pnpm start` | Start production servers (requires build first) |
 
 ### 🔍 Code Quality Commands
 
-| Command | Description |
-|---------|-------------|
-| `pnpm lint` | Run TypeScript and ESLint checks across all packages |
-| `pnpm lint:fix` | Fix auto-fixable linting issues (ESLint only) |
-| `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm format` | Format code with Prettier |
-| `pnpm format:check` | Check code formatting |
+| Command             | Description                                          |
+| ------------------- | ---------------------------------------------------- |
+| `pnpm lint`         | Run TypeScript and ESLint checks across all packages |
+| `pnpm lint:fix`     | Fix auto-fixable linting issues (ESLint only)        |
+| `pnpm typecheck`    | Run TypeScript type checking                         |
+| `pnpm format`       | Format code with Prettier                            |
+| `pnpm format:check` | Check code formatting                                |
 
 ### 🧹 Maintenance Commands
 
-| Command | Description |
-|---------|-------------|
-| `pnpm clean` | Remove all node_modules and build artifacts |
+| Command            | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| `pnpm clean`       | Remove all node_modules and build artifacts                  |
 | `pnpm ci:pipeline` | Run complete CI pipeline (format → lint → typecheck → build) |
 
 ## 🧪 API Testing
 
 ### Health Check Endpoint
+
 Test the backend API with curl:
 
 ```bash
@@ -167,11 +176,13 @@ curl http://localhost:4000/api/health
 ```
 
 ### API Endpoints
+
 - `GET /api/health` - Health check endpoint
 
 ## 🗄️ Database
 
 ### Schema
+
 The database includes a basic User model:
 
 ```prisma
@@ -185,6 +196,7 @@ model User {
 ```
 
 ### Database Commands
+
 ```bash
 # Generate Prisma client
 cd packages/db && pnpm prisma generate
@@ -199,6 +211,7 @@ cd packages/db && pnpm prisma db push --force-reset
 ## 🔧 Development Workflow
 
 ### 1. Daily Development
+
 ```bash
 # Start development servers
 pnpm dev
@@ -209,6 +222,7 @@ pnpm typecheck
 ```
 
 ### 2. Before Committing
+
 ```bash
 # Format code
 pnpm format
@@ -218,6 +232,7 @@ pnpm ci:pipeline
 ```
 
 ### 3. Production Build
+
 ```bash
 # Build everything
 pnpm build
@@ -229,6 +244,7 @@ pnpm start
 ## 📦 Package Management
 
 ### Adding Dependencies
+
 ```bash
 # Add to specific package
 pnpm add <package> --filter @template/frontend
@@ -239,7 +255,9 @@ pnpm add <package> -w
 ```
 
 ### Workspace Dependencies
+
 Packages can reference each other using workspace protocol:
+
 ```json
 {
   "dependencies": {
@@ -252,13 +270,16 @@ Packages can reference each other using workspace protocol:
 ## 🚀 Deployment
 
 ### Environment Variables
+
 Ensure all required environment variables are set in production:
+
 - `NODE_ENV=production`
 - `DATABASE_URL`
 - `JWT_SECRET`
 - `PORT` (optional, defaults to 4000)
 
 ### Build Process
+
 ```bash
 # Install dependencies
 pnpm install --frozen-lockfile
@@ -273,12 +294,14 @@ pnpm start
 ## 🛠️ Customization
 
 ### Adding New Packages
+
 1. Create new directory in `packages/`
 2. Add `package.json` with workspace dependencies
 3. Update `pnpm-workspace.yaml` if needed
 4. Add build configuration to `turbo.json`
 
 ### Adding New Apps
+
 1. Create new directory in `apps/`
 2. Add `package.json` with appropriate scripts
 3. Update `turbo.json` pipeline configuration

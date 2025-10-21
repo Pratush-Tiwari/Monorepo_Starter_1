@@ -1,9 +1,9 @@
-import { createEnv } from "@t3-oss/env-core";
-import { z } from "zod";
+import { createEnv } from '@t3-oss/env-core';
+import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z.enum(["development", "production", "test"]),
+    NODE_ENV: z.enum(['development', 'production', 'test']),
     PORT: z.coerce.number().int().positive(),
     DB_HOST: z.string(),
     DB_PORT: z.coerce.number().int().positive(),

@@ -1,8 +1,8 @@
-import express from "express";
-import routes from "./routes/index.js";
-import { requestLogger } from "./middlewares/requestLogger.js";
-import { notFoundHandler } from "./middlewares/notFound.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import express from 'express';
+import routes from './routes/index.js';
+import { requestLogger } from './middlewares/requestLogger.js';
+import { notFoundHandler } from './middlewares/notFound.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
 export function createApp() {
   const app = express();
@@ -13,7 +13,7 @@ export function createApp() {
   app.use(requestLogger);
 
   // Routes
-  app.use("/api", routes);
+  app.use('/api', routes);
 
   // 404 and error handlers
   app.use(notFoundHandler);

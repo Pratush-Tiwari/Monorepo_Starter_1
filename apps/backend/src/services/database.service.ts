@@ -1,4 +1,4 @@
-import { prisma } from "@template/db";
+import { prisma } from '@template/db';
 
 export class DatabaseService {
   /**
@@ -11,7 +11,7 @@ export class DatabaseService {
       await prisma.$queryRaw`SELECT 1`;
       return true;
     } catch (error) {
-      console.error("Database connection test failed:", error);
+      console.error('Database connection test failed:', error);
       return false;
     }
   }
@@ -28,10 +28,10 @@ export class DatabaseService {
       await prisma.$queryRaw`SELECT 1`;
       return { connected: true };
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Unknown error";
-      return { 
-        connected: false, 
-        error: errorMessage 
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      return {
+        connected: false,
+        error: errorMessage,
       };
     }
   }
