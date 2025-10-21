@@ -67,6 +67,29 @@ template/
 - **PNPM** >= 8.0.0
 - **PostgreSQL** >= 13.0 (for database)
 
+## 🎯 IDE Configuration (Trae AI)
+
+This project includes configuration files specifically for **Trae AI IDE** in the `.trae/` directory:
+
+```
+.trae/
+└── rules/
+    └── project_rules.md    # Project-specific rules and guidelines
+```
+
+### For Trae AI Users
+
+The `.trae/rules/project_rules.md` file contains important project conventions and rules that help Trae AI understand your project structure and provide better assistance.
+
+### For Other IDE Users
+
+If you're using a different IDE (VS Code, Cursor, etc.), you can:
+
+1. **Delete the `.trae/` folder** - It won't affect your project functionality
+2. **Create your own IDE project rules** - It's recommended to setup your own project rules based on the IDE. Look out for the steps to create a project rule, and then add the rules there.
+
+The project will work perfectly fine without the `.trae/` folder - it's just the rules for Trae IDE.
+
 ## 🚀 Quick Start
 
 ### 1. Clone and Install
@@ -99,6 +122,15 @@ DB_NAME=your_database
 # Security
 JWT_SECRET=your-super-secret-jwt-key-min-16-chars
 ```
+
+**Frontend** (`apps/frontend/.env`) - Optional:
+
+```env
+# API Configuration (optional)
+VITE_API_BASE_URL=/api
+```
+
+> **Note**: The frontend `.env` file is optional. If not provided, the frontend will default to `/api` for API calls (assuming same-origin requests). Create this file if you need more control over the API endpoint or want to point to a different backend server.
 
 ### 3. Database Setup
 
